@@ -170,7 +170,7 @@ node_modules/
 
 ## ✍️ Credits
 
-Made by [Your Name]  
+Made by Sai Shashank Kudkuli 
 Built for demos, prototyping, and experimentation.
 
 ---
