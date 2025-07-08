@@ -1,0 +1,109 @@
+{
+  "name": "Neo4j MCP Server",
+  "instructions": null,
+  "fastmcp_version": "2.10.1",
+  "mcp_version": "1.10.1",
+  "server_version": "2.10.1",
+  "tools": [
+    {
+      "key": "search_people",
+      "name": "search_people",
+      "description": "Search for people by name, city, or friendships.",
+      "input_schema": {
+        "properties": {
+          "name": {
+            "default": null,
+            "title": "Name",
+            "type": "string"
+          },
+          "city": {
+            "default": null,
+            "title": "City",
+            "type": "string"
+          },
+          "friend_of": {
+            "default": null,
+            "title": "Friend Of",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "annotations": null,
+      "tags": null,
+      "enabled": true
+    },
+    {
+      "key": "modify_graph",
+      "name": "modify_graph",
+      "description": "Add, update, delete people or relationships.",
+      "input_schema": {
+        "properties": {
+          "action": {
+            "title": "Action",
+            "type": "string"
+          },
+          "entity": {
+            "title": "Entity",
+            "type": "string"
+          },
+          "data": {
+            "additionalProperties": true,
+            "title": "Data",
+            "type": "object"
+          }
+        },
+        "required": [
+          "action",
+          "entity",
+          "data"
+        ],
+        "type": "object"
+      },
+      "annotations": null,
+      "tags": null,
+      "enabled": true
+    },
+    {
+      "key": "explain_connection",
+      "name": "explain_connection",
+      "description": "Explain how one person is connected to another.",
+      "input_schema": {
+        "properties": {
+          "from_person": {
+            "title": "From Person",
+            "type": "string"
+          },
+          "to_person": {
+            "title": "To Person",
+            "type": "string"
+          }
+        },
+        "required": [
+          "from_person",
+          "to_person"
+        ],
+        "type": "object"
+      },
+      "annotations": null,
+      "tags": null,
+      "enabled": true
+    }
+  ],
+  "prompts": [],
+  "resources": [],
+  "templates": [],
+  "capabilities": {
+    "tools": {
+      "listChanged": true
+    },
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    },
+    "prompts": {
+      "listChanged": false
+    },
+    "logging": {}
+  }
+}
